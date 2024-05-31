@@ -1,0 +1,210 @@
+<!doctype html>
+<html class="bg-slate-50 h-full" lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="./output.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/localStorageSetup.js"></script>
+    <title>Connexion</title>
+  </head>
+  <body class="h-full bg-gray-100">
+    <nav
+      class="sticky top-0 z-10 block h-max w-full max-w-full rounded-none border border-white/80 bg-white bg-opacity-80 px-4 py-2 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4"
+    >
+      <div class="flex items-center justify-between text-blue-gray-900">
+        <a
+          href="./index.html"
+          class="mr-4 block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased"
+        >
+          <img src="./img/logovynile.png" alt="logo" class="h-8 w-auto" />
+        </a>
+        <div class="flex items-center gap-4">
+          <div class="mr-4 hidden lg:block">
+            <ul
+              class="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6"
+            >
+              <li
+                class="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased"
+              >
+                <a href="./produits.html" class="flex items-center">
+                  Produits
+                </a>
+              </li>
+              <li
+                class="block p-1 font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased"
+              >
+                <a href="cart.html" class="flex items-center"> Panier </a>
+              </li>
+            </ul>
+          </div>
+          <span
+            id="userNameDisplay"
+            class="mx-8 font-sans text-xs font-bold uppercase text-gray-900"
+          ></span>
+          <span
+            id="connexionTimeDisplay"
+            class="font-sans text-xs font-thin"
+          ></span>
+          <div class="flex items-center gap-x-1">
+            <button
+              id="btnconnexion"
+              class="hidden select-none rounded-lg px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+              type="button"
+            >
+              <span>Connexion</span>
+            </button>
+            <button
+              id="btnregister"
+              class="hidden select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+              type="button"
+            >
+              <span>Créer un compte</span>
+            </button>
+            <button
+              id="btnlogout"
+              class="hidden select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
+              type="button"
+            >
+              <span>Déconnexion</span>
+            </button>
+          </div>
+          <button
+            class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-inherit transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
+            type="button"
+          >
+            <span
+              class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <script src="./js/navbar.js"></script>
+    </nav>
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <img
+          class="mx-auto h-10 w-auto"
+          src="./img/logovynile.png"
+          alt="Your Company"
+        />
+        <h2
+          class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
+        >
+          Connectez vous à votre compte
+        </h2>
+      </div>
+
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-6" action="#" novalidate method="POST">
+          <span
+            id="wrongId"
+            class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block"
+          >
+            Identifiants erronés, essayez à nouveau
+          </span>
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Adresse Email</label
+            >
+            <div class="mt-2">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Mot de passe</label
+              >
+              <!-- <div class="text-sm">
+                <a
+                  href="#"
+                  class="font-semibold text-indigo-600 hover:text-indigo-500"
+                  >Forgot password?</a
+                >
+              </div> -->
+            </div>
+            <div class="mt-2">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              id="connexion"
+              class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Connexion
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-10 text-center text-sm text-gray-500">
+          Pas encore membre ?
+          <a
+            href="./register.html"
+            class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+            >Créez votre compte</a
+          >
+        </p>
+      </div>
+    </div>
+    <script src="./js/login.js"></script>
+  </body>
+</html>
+
+<!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
